@@ -1,9 +1,8 @@
 #Usage
 #   ./make_folder.sh dir
-#Creates directories named 'A' to 'Z' in `dir`
+#Creates directories named 'a' to 'z' in `dir`
 
-#TODO
-cd $1
-
-printf "\x$(printf %x 65)"
-
+for i in {97..122}; do
+    a=$(printf "\x$(printf %x $((i)))")
+    mkdir $1/$a
+done
